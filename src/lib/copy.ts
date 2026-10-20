@@ -10,7 +10,15 @@ interface Copy {
   title: string; description: string; hook: string; h1: string;
   how: { title: string; description: string; lead: string; steps: { name: string; text: string }[] };
   diagramTitle: string; layers: Layer[];
-  about: { title: string; description: string; paragraphs: string[]; alt: string };
+  about: {
+    title: string; description: string; eyebrow: string; h1: string; lead: string; alt: string; caption: string;
+    gist: { big: string; text: string }[];
+    story: { title: string; paragraphs: string[] };
+    cta: { title: string; text: string };
+    place: { title: string; rows: [string, string][] };
+    focus: { title: string };
+    skills: { title: string; groups: { level: string; items: string[] }[] };
+  };
   contact: { title: string; description: string; lead: string; location: string; note: string };
   mail: { talk: { subject: string; body: string }; cv: { subject: string; body: string } };
 }
@@ -37,11 +45,30 @@ export const copy: Record<Locale, Copy> = {
     about: {
       title: 'About',
       description: 'A short introduction to Azeem Ur Rehman, a software engineer in Nürnberg.',
-      paragraphs: [
-        'I am Azeem, a software engineer in Nürnberg with a background in medical robotics. My favourite moment is when a system stops being a diagram and starts being something people use.',
-        'Open to conversations about systems and products that need careful design and careful finishing.',
-      ],
+      eyebrow: 'About',
+      h1: 'I design and build complete products for founders and growing businesses.',
+      lead: "I'm a software engineer in Nürnberg with a background in medical robotics. I like the part most people skip: the finishing.",
       alt: 'Portrait of Azeem Ur Rehman',
+      caption: 'Nürnberg, Germany',
+      gist: [
+        { big: 'Shipped', text: 'A tool owned from the first user interview to the finished product' },
+        { big: 'One system', text: 'Many devices working together as one automated platform' },
+        { big: 'One interface', text: 'Many protocols hidden behind one clean interface' },
+        { big: 'Used daily', text: 'AI workflows a whole team relies on' },
+      ],
+      story: { title: 'From data to robots to products people use', paragraphs: [
+        'I started in data science, working with real data and statistical models, then moved into machine learning research while studying Medical Robotics.',
+        'Today I build the software that makes robots and lab devices work as one system, and I own a calibration product from the first user interview to the shipped tool.',
+        'I also move teams forward: I introduced Git and shared coding standards, built the AI workflows my colleagues use daily, and supervise new engineers.',
+      ] },
+      cta: { title: 'Have an idea worth building?', text: 'A short message is enough to get started.' },
+      place: { title: 'Languages and place', rows: [['Languages', 'English (working language), German (intermediate, improving)'], ['Based in', 'Nürnberg, Germany'], ['Open to', 'Conversations about systems and products that need careful design and careful finishing']] },
+      focus: { title: 'Focus areas' },
+      skills: { title: 'Skills', groups: [
+        { level: 'Every day', items: ['Python', 'FastAPI', 'Flask', 'asyncio', 'pytest'] },
+        { level: 'Strong', items: ['PySide6 / Qt', 'LangChain', 'Ollama', 'LangSmith', 'RAG', 'Agent workflows', 'MQTT', 'Docker', 'Git and CI/CD', 'pandas'] },
+        { level: 'Working knowledge', items: ['PyTorch', 'scikit-learn', 'MLflow', 'OpenCV', 'SQL', 'BLE', 'ESP8266 / Arduino', 'Raspberry Pi'] },
+      ] },
     },
     contact: {
       title: 'Contact',
@@ -78,11 +105,30 @@ export const copy: Record<Locale, Copy> = {
     about: {
       title: 'Über mich',
       description: 'Eine kurze Vorstellung von Azeem Ur Rehman, Softwareingenieur in Nürnberg.',
-      paragraphs: [
-        'Ich bin Azeem, Softwareingenieur in Nürnberg mit einem Hintergrund in der medizinischen Robotik. Mein liebster Moment ist, wenn ein System aufhört, ein Diagramm zu sein, und etwas wird, das Menschen benutzen.',
-        'Offen für Gespräche über Systeme und Produkte, die sorgfältigen Entwurf und sorgfältige Fertigstellung brauchen.',
-      ],
+      eyebrow: 'Über mich',
+      h1: 'Ich entwerfe und baue vollständige Produkte für Gründer und wachsende Unternehmen.',
+      lead: 'Ich bin Softwareingenieur in Nürnberg mit Hintergrund in der medizinischen Robotik. Ich mag den Teil, den die meisten überspringen: den Feinschliff.',
       alt: 'Porträt von Azeem Ur Rehman',
+      caption: 'Nürnberg, Deutschland',
+      gist: [
+        { big: 'Ausgeliefert', text: 'Ein Werkzeug, vom ersten Nutzergespräch bis zum fertigen Produkt verantwortet' },
+        { big: 'Ein System', text: 'Viele Geräte, die als eine automatisierte Plattform zusammenarbeiten' },
+        { big: 'Eine Schnittstelle', text: 'Viele Protokolle hinter einer sauberen Schnittstelle' },
+        { big: 'Täglich genutzt', text: 'KI-Workflows, auf die sich ein ganzes Team verlässt' },
+      ],
+      story: { title: 'Von Daten über Roboter zu Produkten, die Menschen nutzen', paragraphs: [
+        'Ich habe in der Datenwissenschaft begonnen, mit echten Daten und statistischen Modellen, und bin dann in die Forschung zum maschinellen Lernen gewechselt, während ich medizinische Robotik studierte.',
+        'Heute baue ich die Software, mit der Roboter und Laborgeräte als ein System arbeiten, und verantworte ein Kalibrierprodukt vom ersten Nutzergespräch bis zum ausgelieferten Werkzeug.',
+        'Ich bringe auch Teams voran: Ich habe Git und gemeinsame Programmierstandards eingeführt, die KI-Workflows gebaut, die meine Kollegen täglich nutzen, und betreue neue Ingenieure.',
+      ] },
+      cta: { title: 'Eine Idee, die es wert ist, gebaut zu werden?', text: 'Eine kurze Nachricht genügt für den Start.' },
+      place: { title: 'Sprachen und Ort', rows: [['Sprachen', 'Englisch (Arbeitssprache), Deutsch (mittleres Niveau, wird besser)'], ['Standort', 'Nürnberg, Deutschland'], ['Offen für', 'Gespräche über Systeme und Produkte, die sorgfältigen Entwurf und sorgfältige Fertigstellung brauchen']] },
+      focus: { title: 'Schwerpunkte' },
+      skills: { title: 'Kenntnisse', groups: [
+        { level: 'Täglich', items: ['Python', 'FastAPI', 'Flask', 'asyncio', 'pytest'] },
+        { level: 'Stark', items: ['PySide6 / Qt', 'LangChain', 'Ollama', 'LangSmith', 'RAG', 'Agenten-Workflows', 'MQTT', 'Docker', 'Git und CI/CD', 'pandas'] },
+        { level: 'Praxiswissen', items: ['PyTorch', 'scikit-learn', 'MLflow', 'OpenCV', 'SQL', 'BLE', 'ESP8266 / Arduino', 'Raspberry Pi'] },
+      ] },
     },
     contact: {
       title: 'Kontakt',
