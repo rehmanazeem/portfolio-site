@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- About page simplified: hero only (portrait, headline, intro, Talk to me and Request my CV); highlights, story, panes and closing band removed from the page (copy kept in copy.ts).
 - About page rebuilt: arched black-and-white portrait, hero, highlight strip in words (no figures), short story, shaded panes (languages and place, focus areas, skills by level) and a closing contact band; EN and DE (German is a draft). Gate, browser tests 22/22 and 7/7, Lighthouse 100 on the About, German About, Home and Contact pages.
 - Home and brand pass: question hook, new headline and a contact-page button; "How I work" page (four tiles, EN and DE) and menu item; "What I work across" panel with four expertise areas (HMI and UX, agentic systems, middleware, embedded systems), three pointers each, row stays open after hover; new logo (mark and name, light and dark, mark only on phones) and favicons in public/brand; Outfit as the single self-hosted font. Gate, browser tests 22/22 and 7/7, Lighthouse 100 on seven checked pages.
 - Polish: hero scale 2.25 to 3.75rem with a 20ch line length, hero centred in the free space, 200 ms section entrance (reduced-motion safe), refined icon hover, tabular numbers.

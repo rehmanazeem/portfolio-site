@@ -8,7 +8,6 @@ import { brand, useTranslations, type Locale } from '../i18n/ui';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const a = copy[locale].about;
-const layers = copy[locale].layers;
 const t = useTranslations(locale);
 ---
 <section class="about-hero">
@@ -25,49 +24,4 @@ const t = useTranslations(locale);
     <Image class="portrait" src={portrait} alt={a.alt} width={360} widths={[360, 720]} sizes="(min-width: 48rem) 360px, 70vw" loading="eager" format="webp" quality={80} />
     <figcaption><span>{brand}</span><span>{a.caption}</span></figcaption>
   </figure>
-</section>
-
-<ul class="gist" aria-label="Highlights">
-  {a.gist.map((g) => <li><strong>{g.big}</strong><span>{g.text}</span></li>)}
-</ul>
-
-<section class="story">
-  <h2>{a.story.title}</h2>
-  <div class="story-text">
-    {a.story.paragraphs.map((p) => <p>{p}</p>)}
-  </div>
-</section>
-
-<div class="panes">
-  <section class="pane pane-2">
-    <h2>{a.place.title}</h2>
-    <dl>
-      {a.place.rows.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}
-    </dl>
-  </section>
-  <section class="pane pane-3">
-    <h2>{a.focus.title}</h2>
-    <ul class="focus-tiles">
-      {layers.map((l) => <li>{l.name}</li>)}
-    </ul>
-  </section>
-  <section class="pane pane-4 pane-wide">
-    <h2>{a.skills.title}</h2>
-    <div class="skill-groups">
-      {a.skills.groups.map((g, i) => (
-        <div class={`skill-group level-${i + 1}`}>
-          <h3>{g.level}</h3>
-          <ul class="chips">{g.items.map((it) => <li>{it}</li>)}</ul>
-        </div>
-      ))}
-    </div>
-  </section>
-</div>
-
-<section class="cta-band">
-  <div>
-    <h2>{a.cta.title}</h2>
-    <p>{a.cta.text}</p>
-  </div>
-  <a class="btn btn-primary" href={urlFor('contact', locale)}>{t('cta.talk')}</a>
 </section>
