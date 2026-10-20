@@ -1,0 +1,15 @@
+---
+// Address assembled in the browser so scrapers reading the HTML do not see it.
+const user = 'rehmanazeem915';
+const domain = 'gmail.com';
+---
+<a class="email" data-u={user} data-d={domain} href="#contact-note">{user} [at] {domain.replace('.', ' [dot] ')}</a>
+<script>
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll<HTMLAnchorElement>('a.email').forEach((a) => {
+      const addr = `${a.dataset.u}@${a.dataset.d}`;
+      a.href = `mailto:${addr}`;
+      a.textContent = addr;
+    });
+  });
+</script>

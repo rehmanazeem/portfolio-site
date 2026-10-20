@@ -1,0 +1,17 @@
+---
+import Base from '../../layouts/Base.astro';
+import { urlFor } from '../../i18n/routes';
+import { copy } from '../../lib/copy';
+import { brand, useTranslations } from '../../i18n/ui';
+const h = copy['de'].how;
+const t = useTranslations('de');
+---
+<!-- DE: needs review -->
+<Base locale="de" route="how" switchable title={`${h.title} | ${brand}`} description={h.description}>
+  <h1>{h.title}</h1>
+  <p class="lead">{h.lead}</p>
+  <ol class="tiles">
+    {h.steps.map((s) => <li class="tile"><strong>{s.name}</strong><p>{s.text}</p></li>)}
+  </ol>
+  <p class="actions"><a class="btn btn-primary" href={urlFor('contact', 'de')}>{t('cta.talk')}</a></p>
+</Base>

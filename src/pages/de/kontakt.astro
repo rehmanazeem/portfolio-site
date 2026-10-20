@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import CopyEmail from '../../components/CopyEmail.astro';
+import MailButton from '../../components/MailButton.astro';
+import { copy } from '../../lib/copy';
+import { links } from '../../lib/profile';
+import { brand, useTranslations } from '../../i18n/ui';
+const c = copy['de'].contact;
+const t = useTranslations('de');
+---
+<!-- DE: needs review -->
+<Base locale="de" route="contact" switchable title={`${c.title} | ${brand}`} description={c.description}>
+  <h1>{c.title}</h1>
+  <p class="lead">{c.lead}</p>
+  <ul class="icon-row">
+    <li><a class="icon-big" href={links.github} rel="noopener"><Icon name="github" size={26} /><span>{t('icon.github')}</span></a></li>
+    <li><a class="icon-big" href={links.linkedin} rel="noopener"><Icon name="linkedin" size={26} /><span>{t('icon.linkedin')}</span></a></li>
+    <li><MailButton locale="de" class="icon-big"><Icon name="mail" size={26} /><span>{t('icon.mail')}</span></MailButton></li>
+  </ul>
+  <p class="actions"><CopyEmail locale="de" /></p>
+  <p class="muted">{c.location} · <MailButton locale="de" kind="cv" class="text-link" /></p>
+  <p id="contact-note" class="muted note">{c.note}</p>
+</Base>

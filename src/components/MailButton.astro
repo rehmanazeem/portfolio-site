@@ -1,0 +1,19 @@
+---
+import Icon from './Icon.astro';
+import { copy } from '../lib/copy';
+import { useTranslations, type Locale } from '../i18n/ui';
+// The address is assembled in the browser so scrapers reading the HTML do not see it.
+interface Props { locale: Locale; kind?: 'talk' | 'cv'; class?: string; icon?: boolean; size?: number }
+const { locale, kind = 'talk', class: klass = 'btn btn-primary', icon = false, size } = Astro.props;
+const t = useTranslations(locale);
+const m = copy[locale].mail[kind];
+---
+<a class={`${klass} mail-cta`} href="#contact-note" data-u="rehmanazeem915" data-d="gmail.com" data-subject={m.subject} data-body={m.body} aria-label={icon ? t('icon.mail') : undefined}>{icon ? <Icon name="mail" size={size} /> : <slot>{t(kind === 'cv' ? 'cta.cv' : 'cta.talk')}</slot>}</a>
+<script>
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll<HTMLAnchorElement>('a.mail-cta').forEach((a) => {
+      const { u, d, subject = '', body = '' } = a.dataset;
+      a.href = `mailto:${u}@${d}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  });
+</script>

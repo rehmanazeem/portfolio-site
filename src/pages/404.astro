@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { useTranslations } from '../i18n/ui';
+const en = useTranslations('en');
+const de = useTranslations('de');
+---
+<Base locale="en" title={`${en('404.title')} | ${de('404.title')}`} description={en('404.body')}>
+  <h1>{en('404.title')}</h1>
+  <p>{en('404.body')} <a href={getRelativeLocaleUrl('en', '')}>{en('404.home')}</a></p>
+  <h2 lang="de">{de('404.title')}</h2>
+  <p lang="de">{de('404.body')} <a href={getRelativeLocaleUrl('de', '')}>{de('404.home')}</a></p>
+</Base>

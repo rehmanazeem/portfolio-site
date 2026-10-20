@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+.env
+# Private working notes (not for the public repo)
+BUILD_PLAN.md
+scripts/blocklist.local.txt
+docs/

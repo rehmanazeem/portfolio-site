@@ -1,0 +1,25 @@
+---
+import Base from '../../layouts/Base.astro';
+import { impressumUrl } from '../../i18n/routes';
+---
+<!-- DE: needs review. TEMPLATE for Azeem to check before launch, not legal advice. -->
+<Base locale="de" route="privacy" switchable title="Datenschutzerklärung | Azeem Ur Rehman" description="Wie diese Website mit Daten umgeht: keine Cookies, kein Tracking, gehostet auf GitHub Pages.">
+  <div class="legal">
+    <h1>Datenschutzerklärung</h1>
+    <p class="muted">Stand: Oktober 2026</p>
+    <h2>1. Verantwortlicher</h2>
+    <p>Azeem Ur Rehman, Nürnberg, Deutschland. Postanschrift und E-Mail: siehe <a href={impressumUrl()}>Impressum</a>.</p>
+    <h2>2. Hosting</h2>
+    <p>Diese Website ist eine statische Seite und wird über GitHub Pages (GitHub Inc., USA) bereitgestellt. Beim Aufruf einer Seite verarbeitet der Hosting-Anbieter technische Daten in Server-Logfiles, etwa Ihre IP-Adresse, den Zeitpunkt der Anfrage, die aufgerufene Seite und den Browsertyp, um die Seite auszuliefern und sicher zu betreiben. Rechtsgrundlage ist unser berechtigtes Interesse am sicheren und effizienten Betrieb der Website (Art. 6 Abs. 1 lit. f DSGVO). Es kann zu einer Übermittlung in die USA kommen; GitHub stützt sich dafür auf das EU-US Data Privacy Framework.</p>
+    <h2>3. Keine Cookies, kein Tracking</h2>
+    <p>Diese Website setzt keine Cookies und verwendet keine Analyse-, Werbe- oder Tracking-Dienste. Schriftarten werden von dieser Website selbst ausgeliefert, und es werden keine Inhalte Dritter eingebettet. Ihr Browser sendet beim Laden einer Seite daher keine Anfragen an andere Server.</p>
+    <h2>4. Lokaler Speicher</h2>
+    <p>Wenn Sie zwischen hellem und dunklem Modus wechseln, wird Ihre Auswahl in Ihrem Browser (localStorage) gespeichert, damit sie beim nächsten Besuch erhalten bleibt. Sie bleibt auf Ihrem Gerät und wird an keinen Server übertragen.</p>
+    <h2>5. Kontakt per E-Mail</h2>
+    <p>Wenn Sie mir schreiben, verarbeite ich Ihre E-Mail-Adresse und Ihre Nachricht, um Ihnen zu antworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b oder f DSGVO. Ich lösche die Korrespondenz, sobald sie nicht mehr erforderlich ist, sofern keine gesetzliche Aufbewahrungspflicht besteht.</p>
+    <h2>6. Externe Links</h2>
+    <p>Diese Website verlinkt auf GitHub und LinkedIn. Mit dem Klick auf einen Link verlassen Sie diese Website, und es gilt die Datenschutzerklärung des jeweiligen Anbieters.</p>
+    <h2>7. Ihre Rechte</h2>
+    <p>Sie haben das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21 DSGVO). Zur Ausübung schreiben Sie an die oben genannte E-Mail-Adresse. Außerdem können Sie sich bei einer Datenschutzaufsichtsbehörde beschweren, in Bayern beim <a href="https://www.lda.bayern.de" rel="noopener">Bayerischen Landesamt für Datenschutzaufsicht (BayLDA)</a>.</p>
+  </div>
+</Base>

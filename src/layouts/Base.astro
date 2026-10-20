@@ -1,0 +1,81 @@
+---
+import '@fontsource-variable/outfit/wght.css';
+import fontLatin from '@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2?url';
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { urlFor, type RouteKey } from '../i18n/routes';
+import { brand, useTranslations, languages, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  /** Which page this is, so the language switch and hreflang alternates point at its twin. */
+  route?: RouteKey;
+  /** True when this page exists in the other language too. */
+  switchable?: boolean;
+  /** Schema.org JSON-LD object for this page. */
+  jsonLd?: Record<string, unknown>;
+}
+const { locale, title, description, route, switchable = false, jsonLd } = Astro.props;
+const t = useTranslations(locale);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const abs = (path: string) => new URL(path, Astro.site).href;
+const canonical = abs(Astro.url.pathname);
+const alternates = switchable && route
+  ? (Object.keys(languages) as Locale[]).map((l) => ({ lang: l, href: abs(urlFor(route, l)) }))
+  : [];
+const ogImage = abs(`${base}/og.png`);
+---
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
+    {alternates.length > 0 && <link rel="alternate" hreflang="x-default" href={alternates[0].href} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={brand} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={locale === 'de' ? 'de_DE' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href={`${base}/brand/favicon.svg`} />
+    <link rel="icon" type="image/png" sizes="32x32" href={`${base}/brand/favicon-32.png`} />
+    <link rel="apple-touch-icon" href={`${base}/brand/apple-touch-icon.png`} />
+    <link rel="preload" href={fontLatin} as="font" type="font/woff2" crossorigin />
+    <meta name="generator" content={Astro.generator} />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    <script is:inline>
+      // Apply the saved theme before first paint and again after each page swap (no flash). Storage may be blocked.
+      (function () {
+        function apply() {
+          var root = document.documentElement;
+          root.classList.add('js');
+          try {
+            var t = localStorage.getItem('theme');
+            if (t === 'light' || t === 'dark') root.dataset.theme = t;
+          } catch (e) {}
+        }
+        apply();
+        document.addEventListener('astro:after-swap', apply);
+      })();
+    </script>
+    <ClientRouter />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t('skip')}</a>
+    <Header locale={locale} route={route} switchable={switchable} />
+    <main id="main"><slot /></main>
+    <Footer locale={locale} />
+  </body>
+</html>

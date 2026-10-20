@@ -1,0 +1,29 @@
+---
+import { useTranslations, type Locale } from '../i18n/ui';
+// Copies the address (assembled in the browser). If the clipboard is blocked, shows the address instead.
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+<button type="button" class="btn copy-email" data-u="rehmanazeem915" data-d="gmail.com" data-label={t('cta.copy')} data-done={t('cta.copied')}>{t('cta.copy')}</button>
+<span class="copy-fallback muted" role="status" aria-live="polite" hidden></span>
+<script>
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll<HTMLButtonElement>('button.copy-email').forEach((btn) => {
+      if (btn.dataset.bound) return;
+      btn.dataset.bound = '1';
+      const note = btn.nextElementSibling as HTMLElement | null;
+      btn.addEventListener('click', async () => {
+        const addr = `${btn.dataset.u}@${btn.dataset.d}`;
+        try {
+          await navigator.clipboard.writeText(addr);
+          btn.textContent = btn.dataset.done ?? 'Copied';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = btn.dataset.label ?? 'Copy email'; btn.classList.remove('copied'); }, 2000);
+        } catch {
+          if (note) { note.textContent = addr; note.hidden = false; }
+        }
+      });
+    });
+  });
+</script>

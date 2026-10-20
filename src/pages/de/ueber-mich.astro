@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../../assets/portrait.png';
+import Base from '../../layouts/Base.astro';
+import MailButton from '../../components/MailButton.astro';
+import { copy } from '../../lib/copy';
+import { brand } from '../../i18n/ui';
+const a = copy['de'].about;
+---
+<!-- DE: needs review -->
+<Base locale="de" route="about" switchable title={`${a.title} | ${brand}`} description={a.description}>
+  <div class="about-grid">
+    <div class="about-text">
+      <h1>{a.title}</h1>
+      {a.paragraphs.map((p, i) => <p class={i === 0 ? 'lead' : undefined}>{p}</p>)}
+      <p><MailButton locale="de" kind="cv" class="text-link" /></p>
+    </div>
+    <Image class="portrait" src={portrait} alt={a.alt} width={360} widths={[360, 720]} sizes="(min-width: 48rem) 360px, 70vw" loading="eager" format="webp" quality={80} />
+  </div>
+</Base>

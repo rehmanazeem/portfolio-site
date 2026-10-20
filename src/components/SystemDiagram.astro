@@ -1,0 +1,46 @@
+---
+import { copy } from '../lib/copy';
+import type { Locale } from '../i18n/ui';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const title = copy[locale].diagramTitle;
+const layers = copy[locale].layers;
+---
+<figure class="sysdiagram" data-diagram>
+  <figcaption class="sysdiagram-title">{title}</figcaption>
+  <ol class="layers">
+    {layers.map((l, i) => (
+      <li class="layer-item" style={`--i:${i}`}>
+        <button type="button" class="layer" aria-expanded="false" aria-controls={`layer-${l.id}`} data-layer={l.id}>
+          <span class="layer-name">{l.name}</span>
+        </button>
+        <div class="layer-text" id={`layer-${l.id}`} role="region" aria-label={l.name}>
+          <ul>{l.points.map((p) => <li>{p}</li>)}</ul>
+        </div>
+      </li>
+    ))}
+  </ol>
+</figure>
+<script>
+  document.addEventListener('astro:page-load', () => {
+  document.querySelectorAll<HTMLElement>('[data-diagram]').forEach((root) => {
+    const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>('.layer'));
+    const set = (active: HTMLButtonElement | null) =>
+      buttons.forEach((b) => b.setAttribute('aria-expanded', String(b === active)));
+    buttons.forEach((b, i) => {
+      b.addEventListener('click', () => {
+        const canHover = matchMedia('(hover: hover)').matches;
+        set(canHover || b.getAttribute('aria-expanded') !== 'true' ? b : null); // touch: tap again to close
+      });
+      b.addEventListener('mouseenter', () => matchMedia('(hover: hover)').matches && set(b));
+      b.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown') { e.preventDefault(); buttons[(i + 1) % buttons.length].focus(); }
+        if (e.key === 'ArrowUp') { e.preventDefault(); buttons[(i - 1 + buttons.length) % buttons.length].focus(); }
+      });
+      b.addEventListener('focus', () => b.matches(':focus-visible') && set(b)); // keyboard focus only
+    });
+    root.classList.add('is-ready');
+    set(buttons[0] ?? null); // first layer open by default so its text is visible
+  });
+  });
+</script>

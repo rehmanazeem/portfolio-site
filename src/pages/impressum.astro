@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import EmailLink from '../components/EmailLink.astro';
+import { legal } from '../lib/legal';
+---
+<!-- Impressum: German legal notice (§ 5 DDG). TEMPLATE for Azeem to check, not legal advice. -->
+<Base locale="de" title="Impressum | Azeem Ur Rehman" description="Anbieterkennzeichnung nach § 5 DDG.">
+  <div class="legal">
+    <h1>Impressum</h1>
+    <h2>Angaben gemäß § 5 DDG</h2>
+    <p>
+      {legal.name}<br />
+      {legal.address
+        ? legal.address.map((line) => <>{line}<br /></>)
+        : <span class="notice">Postanschrift: noch nicht eingetragen. Vor der Veröffentlichung in src/lib/legal.ts ergänzen.</span>}
+    </p>
+    <h2>Kontakt</h2>
+    <p>E-Mail: <EmailLink /></p>
+    <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+    <p>{legal.name}, Anschrift wie oben.</p>
+    <h2>Haftung für Inhalte und Links</h2>
+    <p>Die Inhalte dieser Seiten wurden mit Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität kann jedoch keine Gewähr übernommen werden. Für Inhalte externer Seiten, auf die verlinkt wird, sind ausschließlich deren Betreiber verantwortlich.</p>
+    <p class="muted">Stand: {legal.updated}</p>
+  </div>
+</Base>

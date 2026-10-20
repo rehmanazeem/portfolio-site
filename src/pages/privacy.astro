@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import { impressumUrl } from '../i18n/routes';
+---
+<!-- TEMPLATE for Azeem to check before launch, not legal advice. -->
+<Base locale="en" route="privacy" switchable title="Privacy policy | Azeem Ur Rehman" description="How this website handles data: no cookies, no tracking, hosted on GitHub Pages.">
+  <div class="legal">
+    <h1>Privacy policy</h1>
+    <p class="muted">Last updated: October 2026</p>
+    <h2>1. Controller</h2>
+    <p>Azeem Ur Rehman, Nürnberg, Germany. Postal address and email: see the <a href={impressumUrl()} lang="de">legal notice (Impressum)</a>.</p>
+    <h2>2. Hosting</h2>
+    <p>This site is a static website hosted on GitHub Pages (GitHub Inc., USA). When you open a page, the hosting provider processes technical data in server logs, such as your IP address, the time of the request, the page requested and your browser type, to deliver the page and keep it secure. The legal basis is our legitimate interest in running the site safely and efficiently (Art. 6(1)(f) GDPR). Data may be transferred to the USA; GitHub relies on the EU-US Data Privacy Framework for this.</p>
+    <h2>3. No cookies, no tracking</h2>
+    <p>This site sets no cookies and uses no analytics, advertising or tracking tools. Fonts are hosted on this site, and no content is embedded from third parties, so your browser makes no requests to other servers when loading a page.</p>
+    <h2>4. Local storage</h2>
+    <p>If you switch between light and dark mode, your choice is saved in your browser (localStorage) so it is remembered on your next visit. It stays on your device and is not sent to any server.</p>
+    <h2>5. Contact by email</h2>
+    <p>If you write to me, I process your email address and your message to answer you. The legal basis is Art. 6(1)(b) or (f) GDPR. I delete the correspondence once it is no longer needed, unless a legal retention duty applies.</p>
+    <h2>6. External links</h2>
+    <p>This site links to GitHub and LinkedIn. When you follow a link you leave this site, and the privacy policy of that provider applies.</p>
+    <h2>7. Your rights</h2>
+    <p>You have the right to access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and to object (Art. 21 GDPR). To exercise them, write to the email address above. You can also lodge a complaint with a data protection authority, for Bavaria the <a href="https://www.lda.bayern.de" rel="noopener">Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)</a>.</p>
+  </div>
+</Base>
