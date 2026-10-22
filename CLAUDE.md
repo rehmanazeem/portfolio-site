@@ -10,7 +10,7 @@ Bilingual (EN default, DE under `/de/`) personal site for Azeem Ur Rehman. Astro
 ## Rules
 - **Employer stays anonymous** ("a lab-automation company") everywhere on the site until Azeem has written permission. Case studies show patterns and outcomes, never architecture detail, vendors, devices or customers. `scripts/blocklist.local.txt` (gitignored) lists terms the check must find nowhere.
 - **Availability is soft:** "open to conversations" only. No rates, capacity, start dates, or the words freelance/contractor. (Work-permit and contract questions are Azeem's to settle first.)
-- **About page (Azeem asked for it):** a skills pane (technologies grouped by level), languages and place, background and focus areas are allowed. No numbers, no employer-linked device, protocol or vendor names, no role history or dates.
+- **About page (Azeem asked for it):** a skills pane (technologies grouped by level), languages and place, background and focus areas are allowed. No numbers, no employer-linked device, protocol or vendor names, no role history or dates. Story: years only, degrees may be named, past employers and the current one stay generic ("a space agency", "an analytics firm", "a lab-automation company"); the CV request is the closing step.
 - **Azeem's explicit overrides (home page only):** the first-person hero text is allowed (repo cards were tried and removed). Still banned: numbers/metrics, device, protocol or vendor names, proof lines, any employer detail.
 - Voice: warm, conversational, first person, short. Keep it minimal; do not add sections, numbers or tech lists back without Azeem asking.
 - Photo on the About page only. Recommendations are linked to LinkedIn, never copied.

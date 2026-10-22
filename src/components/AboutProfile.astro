@@ -3,25 +3,37 @@ import { Image } from 'astro:assets';
 import portrait from '../assets/portrait.jpg';
 import MailButton from './MailButton.astro';
 import { copy } from '../lib/copy';
-import { urlFor } from '../i18n/routes';
-import { brand, useTranslations, type Locale } from '../i18n/ui';
+import { brand, type Locale } from '../i18n/ui';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const a = copy[locale].about;
-const t = useTranslations(locale);
 ---
 <section class="about-hero">
   <div class="about-copy">
     <p class="kicker eyebrow">{a.eyebrow}</p>
-    <h1>{a.h1}</h1>
-    <p class="lead">{a.lead}</p>
-    <p class="actions">
-      <a class="btn btn-primary" href={urlFor('contact', locale)}>{t('cta.talk')}</a>
-      <MailButton locale={locale} kind="cv" class="text-link" />
-    </p>
+    <h1>{a.story.title}</h1>
+    {a.story.paragraphs.map((p) => <p>{p}</p>)}
+    <p class="beyond">{a.story.beyond}</p>
   </div>
   <figure class="portrait-frame">
     <Image class="portrait" src={portrait} alt={a.alt} width={360} widths={[360, 720]} sizes="(min-width: 48rem) 360px, 70vw" loading="eager" format="webp" quality={80} />
     <figcaption><span>{brand}</span><span>{a.caption}</span></figcaption>
   </figure>
+</section>
+
+<section class="pane skills-pane">
+  <h2>{a.skills.title}</h2>
+  <div class="skill-groups">
+    {a.skills.groups.map((g, i) => (
+      <div class={`skill-group level-${i + 1}`}>
+        <h3>{g.level}</h3>
+        <ul class="chips">{g.items.map((it) => <li>{it}</li>)}</ul>
+      </div>
+    ))}
+  </div>
+</section>
+
+<section class="cta-band">
+  <p>{a.cv.text}</p>
+  <MailButton locale={locale} kind="cv" class="btn btn-primary">{a.cv.button}</MailButton>
 </section>
