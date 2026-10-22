@@ -94,9 +94,8 @@ main { display: flex; flex-direction: column; }
 .portrait-frame figcaption { display: flex; justify-content: space-between; gap: .75rem; padding-top: .75rem; font-size: .85rem; color: var(--muted); }
 
 /* contact: left-aligned and minimal */
-.contact-center { display: grid; justify-items: start; text-align: left; align-content: center; gap: .5rem; min-height: 55vh; padding: 3rem 0; }
-.contact-center h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); max-width: 22ch; line-height: 1.15; margin: .25rem 0 .5rem; }
-.contact-center .eyebrow { margin: 0 0 1.5rem; }
+.contact-center { display: grid; justify-items: start; text-align: left; align-content: center; gap: 0; min-height: 55vh; padding: 3rem 0; }
+.contact-center h1 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); max-width: 26ch; line-height: 1.2; margin: 0 0 .5rem; }
 .contact-center .lead { margin: 0 0 1.5rem; color: var(--muted); }
 .contact-center .icon-row { justify-content: flex-start; margin: 0; }
 .contact-center .copy-item { display: inline-flex; align-items: center; gap: .6rem; }

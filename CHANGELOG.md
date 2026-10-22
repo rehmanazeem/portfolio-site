@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Contact spacing: label-to-heading gap and heading size now match the About page (10px, 38px on desktop); the line "You can find me at" stays under the heading.
 - Contact page reduced to a left-aligned label, heading ("A short message is welcome."), the line "You can find me at" and four buttons (LinkedIn, GitHub, Copy email, Email with a prefilled message); no form, since the site has no backend. Mobile menu: a hamburger opens a side panel on phones (backdrop, Escape to close). Unused About copy and styles removed. Gate, browser tests 22/22 and 7/7.
 - About page simplified: hero only (portrait, headline, intro, Talk to me and Request my CV); highlights, story, panes and closing band removed from the page (copy kept in copy.ts).
 - About page rebuilt: arched black-and-white portrait, hero, highlight strip in words (no figures), short story, shaded panes (languages and place, focus areas, skills by level) and a closing contact band; EN and DE (German is a draft). Gate, browser tests 22/22 and 7/7, Lighthouse 100 on the About, German About, Home and Contact pages.
