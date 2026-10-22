@@ -8,6 +8,7 @@ export const brand = 'Azeem Ur Rehman';
 export const ui = {
   en: {
     'nav.main': 'Main',
+    'menu.toggle': 'Toggle menu',
     'nav.how': 'How I work',
     'nav.about': 'About',
     'nav.contact': 'Contact',
@@ -30,6 +31,7 @@ export const ui = {
   },
   de: {
     'nav.main': 'Hauptnavigation',
+    'menu.toggle': 'Menü umschalten',
     'nav.how': 'Wie ich arbeite',
     'nav.about': 'Über mich',
     'nav.contact': 'Kontakt',

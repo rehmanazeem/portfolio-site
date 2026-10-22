@@ -18,7 +18,7 @@ const switchTo = switchable && route ? urlFor(route, other) : undefined;
       <img class="logo logo-mark logo-light" src={`${brandDir}/logo-mark.svg`} alt={brand} width="28" height="28" />
       <img class="logo logo-mark logo-dark" src={`${brandDir}/logo-mark-dark.svg`} alt={brand} width="28" height="28" />
     </a>
-    <nav class="nav" aria-label={t('nav.main')}>
+    <nav class="nav" id="site-nav" aria-label={t('nav.main')}>
       {sections.map(([key, label]) => {
         const href = urlFor(key, locale);
         return <a href={href} aria-current={Astro.url.pathname.startsWith(href) ? 'page' : undefined}>{t(label)}</a>;
@@ -26,12 +26,29 @@ const switchTo = switchable && route ? urlFor(route, other) : undefined;
     </nav>
     <div class="tools">
       {switchTo && <a class="btn" href={switchTo} hreflang={other} lang={other} data-astro-reload>{t('lang.switch')}</a>}
+      <button class="btn menu-btn" type="button" id="menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label={t('menu.toggle')}>☰</button>
       <button class="btn" type="button" id="theme-toggle" aria-label={t('theme.toggle')}>◐</button>
     </div>
   </div>
+  <div class="scrim" id="menu-scrim"></div>
 </header>
 <script>
   document.addEventListener('astro:page-load', () => {
+    const menu = document.getElementById('menu-toggle');
+    const nav = document.getElementById('site-nav');
+    if (menu && nav && !menu.dataset.bound) {
+      menu.dataset.bound = '1';
+      const set = (open: boolean) => {
+        nav.classList.toggle('open', open);
+        document.getElementById('menu-scrim')?.classList.toggle('open', open);
+        menu.setAttribute('aria-expanded', String(open));
+        menu.textContent = open ? '✕' : '☰';
+      };
+      menu.addEventListener('click', () => set(!nav.classList.contains('open')));
+      document.getElementById('menu-scrim')?.addEventListener('click', () => set(false));
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
+    }
+
     const btn = document.getElementById('theme-toggle');
     if (!btn || btn.dataset.bound) return;
     btn.dataset.bound = '1';
