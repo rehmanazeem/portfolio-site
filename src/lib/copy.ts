@@ -48,17 +48,19 @@ export const copy: Record<Locale, Copy> = {
       story: {
         title: 'From data to robots to products people use',
         paragraphs: [
-          'I started in computer science in New Delhi, then worked with real data: at the apex space agency on remote sensing applications, and at an analytics firm for fintech clients across China, the USA and India, building models and pipelines. Moving on to a Master\'s in Medical Robotics at FAU Erlangen-Nürnberg, with research on machine learning at a university institute for factory automation, took me from data to machines.',
-          'For more than four years I have worked across data, research and software. Today, at a lab-automation company, I take a product from the first user interview to the shipped tool, connect robots and devices into one system, and build the AI workflows my colleagues use every day. What I enjoy most is solving real problems in the real world: taking a messy, manual process and automating it until it simply works. I like real challenges, with real machines and real users, and I build systems with fine detail, where every part is engineered with care and runs smoothly.',
+          'I started in computer science in New Delhi, then worked with real data, first at a space agency on remote sensing applications, leading into ML modelling and data pipeline work at an analytics firm for international fintech clients, with teams across China, India and the USA. Moving on to a Master\'s in Medical Robotics at FAU Erlangen-Nürnberg, with research on machine learning at a university institute for factory automation, took me from data to machines.',
+          'For more than four years I have worked across data science, business intelligence, AI/ML research, UI/UX design and software development, and I build embedded systems on the side. Today, at a lab-automation company, I lead the integration of AI and ML into everyday workflows, maintain and develop the main software product for high-throughput research, and connect robots and devices into one system. I also own an internal calibration tool, taken from the first user interview to the shipped tool, that enables teams in the production phase, and I build the AI workflows my colleagues use every day.',
+          'What I enjoy most is solving real problems in the real world: taking a messy, manual process and automating it until it simply works. I like real challenges, with real machines and real users, and I build systems with fine detail, where every part is engineered with care and runs smoothly.',
         ],
         beyond: 'Beyond work: building IoT projects at home, guitar jam sessions, photography and road trips.',
       },
       skills: { title: 'Skills', groups: [
-        { level: 'Every day', items: ['Python', 'FastAPI', 'Flask', 'asyncio', 'pytest'] },
-        { level: 'Strong', items: ['PySide6 / Qt', 'LangChain', 'Ollama', 'LangSmith', 'RAG', 'Agent workflows', 'MQTT', 'Docker', 'Git and CI/CD', 'pandas'] },
-        { level: 'Working knowledge', items: ['PyTorch', 'scikit-learn', 'MLflow', 'OpenCV', 'SQL', 'BLE', 'ESP8266 / Arduino', 'Raspberry Pi'] },
+        { level: 'Every day', items: ['Python', 'FastAPI', 'Flask', 'asyncio', 'pytest', 'Claude Code'] },
+        { level: 'Strong', items: ['PySide6 / Qt', 'LangChain', 'Ollama', 'LangSmith', 'RAG', 'Qdrant', 'Agent workflows', 'Claude skills', 'MQTT', 'Docker', 'Git and CI/CD', 'pandas'] },
+        { level: 'Working knowledge', items: ['PyTorch', 'scikit-learn', 'MLflow', 'Optuna', 'OpenCV', 'JavaScript', 'C++', 'C#', 'SQL', 'SAS', 'MongoDB', 'AWS Bedrock', 'Azure OpenAI', 'OpenAI API', 'N8N', 'PyInstaller', 'BLE', 'ESP8266 / Arduino', 'Raspberry Pi'] },
+        { level: 'Creative and design', items: ['UI/UX design', 'Prototyping', 'HTML', 'CSS', 'Figma', 'Canva', 'Technical writing', 'Documentation'] },
       ] },
-      cv: { text: 'Want the full path, with names and dates?', button: 'Request my CV' },
+      cv: { text: 'Want to know about the full path, with names and dates?', button: 'Request my CV' },
     },
     contact: {
       title: 'Contact',
@@ -101,17 +103,19 @@ export const copy: Record<Locale, Copy> = {
       story: {
         title: 'Von Daten über Roboter zu Produkten, die Menschen nutzen',
         paragraphs: [
-          'Ich habe in Neu-Delhi mit Informatik begonnen und danach mit echten Daten gearbeitet: bei der obersten Raumfahrtbehörde an Anwendungen der Fernerkundung und bei einem Analysehaus für Fintech-Kunden in China, den USA und Indien, mit Modellen und Datenpipelines. Der Wechsel zu einem Master in Medizinischer Robotik an der FAU Erlangen-Nürnberg, mit Forschung zu maschinellem Lernen an einem Universitätsinstitut für Fabrikautomation, hat mich von Daten zu Maschinen geführt.',
-          'Seit mehr als vier Jahren arbeite ich zwischen Daten, Forschung und Software. Heute führe ich bei einem Unternehmen für Laborautomation ein Produkt vom ersten Nutzergespräch bis zum ausgelieferten Werkzeug, verbinde Roboter und Geräte zu einem System und baue die KI-Workflows, die meine Kollegen täglich nutzen. Am meisten schätze ich es, echte Probleme in der echten Welt zu lösen: einen unübersichtlichen, manuellen Ablauf so zu automatisieren, dass er einfach funktioniert. Ich mag echte Herausforderungen, mit echten Maschinen und echten Nutzern, und ich baue Systeme mit feinem Detail, in denen jedes Teil sorgfältig entwickelt ist und reibungslos läuft.',
+          'Ich habe in Neu-Delhi mit Informatik begonnen und danach mit echten Daten gearbeitet, zuerst bei einer Raumfahrtbehörde an Anwendungen der Fernerkundung, daran anschließend an ML-Modellierung und Datenpipelines bei einem Analysehaus für internationale Fintech-Kunden mit Teams in China, Indien und den USA. Der Wechsel zu einem Master in Medizinischer Robotik an der FAU Erlangen-Nürnberg, mit Forschung zu maschinellem Lernen an einem Universitätsinstitut für Fabrikautomation, hat mich von Daten zu Maschinen geführt.',
+          'Seit mehr als vier Jahren arbeite ich in Data Science, Business Intelligence, KI-/ML-Forschung, UI/UX-Design und Softwareentwicklung, und ich baue nebenbei eingebettete Systeme. Heute leite ich bei einem Unternehmen für Laborautomation die Integration von KI und ML in alltägliche Abläufe, pflege und entwickle das zentrale Softwareprodukt für Forschung mit hohem Durchsatz und verbinde Roboter und Geräte zu einem System. Außerdem verantworte ich ein internes Kalibrierwerkzeug, vom ersten Nutzergespräch bis zum ausgelieferten Werkzeug, das Teams in der Produktionsphase befähigt, und baue die KI-Workflows, die meine Kollegen täglich nutzen.',
+          'Am meisten schätze ich es, echte Probleme in der echten Welt zu lösen: einen unübersichtlichen, manuellen Ablauf so zu automatisieren, dass er einfach funktioniert. Ich mag echte Herausforderungen, mit echten Maschinen und echten Nutzern, und ich baue Systeme mit feinem Detail, in denen jedes Teil sorgfältig entwickelt ist und reibungslos läuft.',
         ],
         beyond: 'Neben der Arbeit: IoT-Projekte zu Hause bauen, Gitarren-Jamsessions, Fotografie und Roadtrips.',
       },
       skills: { title: 'Kenntnisse', groups: [
-        { level: 'Täglich', items: ['Python', 'FastAPI', 'Flask', 'asyncio', 'pytest'] },
-        { level: 'Stark', items: ['PySide6 / Qt', 'LangChain', 'Ollama', 'LangSmith', 'RAG', 'Agenten-Workflows', 'MQTT', 'Docker', 'Git und CI/CD', 'pandas'] },
-        { level: 'Praxiswissen', items: ['PyTorch', 'scikit-learn', 'MLflow', 'OpenCV', 'SQL', 'BLE', 'ESP8266 / Arduino', 'Raspberry Pi'] },
+        { level: 'Täglich', items: ['Python', 'FastAPI', 'Flask', 'asyncio', 'pytest', 'Claude Code'] },
+        { level: 'Stark', items: ['PySide6 / Qt', 'LangChain', 'Ollama', 'LangSmith', 'RAG', 'Qdrant', 'Agenten-Workflows', 'Claude Skills', 'MQTT', 'Docker', 'Git und CI/CD', 'pandas'] },
+        { level: 'Praxiswissen', items: ['PyTorch', 'scikit-learn', 'MLflow', 'Optuna', 'OpenCV', 'JavaScript', 'C++', 'C#', 'SQL', 'SAS', 'MongoDB', 'AWS Bedrock', 'Azure OpenAI', 'OpenAI API', 'N8N', 'PyInstaller', 'BLE', 'ESP8266 / Arduino', 'Raspberry Pi'] },
+        { level: 'Kreativ und Design', items: ['UI/UX-Design', 'Prototyping', 'HTML', 'CSS', 'Figma', 'Canva', 'Technisches Schreiben', 'Dokumentation'] },
       ] },
-      cv: { text: 'Möchten Sie den ganzen Weg, mit Namen und Daten?', button: 'Lebenslauf anfragen' },
+      cv: { text: 'Möchten Sie mehr über den ganzen Weg erfahren, mit Namen und Daten?', button: 'Lebenslauf anfragen' },
     },
     contact: {
       title: 'Kontakt',

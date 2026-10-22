@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- About page update: story reworked (remote sensing and ML modelling, then the Master's, then today's work and a longer closing), text justified on laptop screens, photo caption aligned with the "Beyond work" line, CV band wording, and a larger skills pane with a "Creative and design" group. EN and DE (German is a draft).
 - About page: the story is now the page heading beside the arched black-and-white portrait (two paragraphs: data, then robots, then products; degrees named, employers generic, years only), a closing about automation, real problems and fine detail, a "Beyond work" line, the skills pane and a closing CV request band; EN and DE (German is a draft). Gate, browser tests 22/22 and 7/7, Lighthouse 100.
 - Contact spacing: label-to-heading gap and heading size now match the About page (10px, 38px on desktop); the line "You can find me at" stays under the heading.
 - Contact page reduced to a left-aligned label, heading ("A short message is welcome."), the line "You can find me at" and four buttons (LinkedIn, GitHub, Copy email, Email with a prefilled message); no form, since the site has no backend. Mobile menu: a hamburger opens a side panel on phones (backdrop, Escape to close). Unused About copy and styles removed. Gate, browser tests 22/22 and 7/7.
