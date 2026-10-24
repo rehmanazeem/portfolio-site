@@ -60,7 +60,7 @@ export const copy: Record<Locale, Copy> = {
         { level: 'Working knowledge', items: ['PyTorch', 'scikit-learn', 'MLflow', 'Optuna', 'OpenCV', 'JavaScript', 'C++', 'C#', 'SQL', 'SAS', 'MongoDB', 'AWS Bedrock', 'Azure OpenAI', 'OpenAI API', 'N8N', 'PyInstaller', 'BLE', 'ESP8266 / Arduino', 'Raspberry Pi'] },
         { level: 'Creative and design', items: ['UI/UX design', 'Prototyping', 'HTML', 'CSS', 'Figma', 'Canva', 'Technical writing', 'Documentation'] },
       ] },
-      cv: { text: 'Want to know about the full path, with names and dates?', button: 'Request my CV' },
+      cv: { text: 'Want to know more?', button: 'Request my CV' },
     },
     contact: {
       title: 'Contact',
@@ -115,7 +115,7 @@ export const copy: Record<Locale, Copy> = {
         { level: 'Praxiswissen', items: ['PyTorch', 'scikit-learn', 'MLflow', 'Optuna', 'OpenCV', 'JavaScript', 'C++', 'C#', 'SQL', 'SAS', 'MongoDB', 'AWS Bedrock', 'Azure OpenAI', 'OpenAI API', 'N8N', 'PyInstaller', 'BLE', 'ESP8266 / Arduino', 'Raspberry Pi'] },
         { level: 'Kreativ und Design', items: ['UI/UX-Design', 'Prototyping', 'HTML', 'CSS', 'Figma', 'Canva', 'Technisches Schreiben', 'Dokumentation'] },
       ] },
-      cv: { text: 'Möchten Sie mehr über den ganzen Weg erfahren, mit Namen und Daten?', button: 'Lebenslauf anfragen' },
+      cv: { text: 'Möchten Sie mehr erfahren?', button: 'Lebenslauf anfragen' },
     },
     contact: {
       title: 'Kontakt',
