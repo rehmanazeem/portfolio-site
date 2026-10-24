@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- About: CV button reads "Get my CV" (DE draft: "Lebenslauf holen"); the photo caption shows only the name and the About description no longer names the city.
 - About CV band shortened to "Want to know more?" with the Request my CV button (DE draft: "Möchten Sie mehr erfahren?").
 - About page update: story reworked (remote sensing and ML modelling, then the Master's, then today's work and a longer closing), text justified on laptop screens, photo caption aligned with the "Beyond work" line, CV band wording, and a larger skills pane with a "Creative and design" group. EN and DE (German is a draft).
 - About page: the story is now the page heading beside the arched black-and-white portrait (two paragraphs: data, then robots, then products; degrees named, employers generic, years only), a closing about automation, real problems and fine detail, a "Beyond work" line, the skills pane and a closing CV request band; EN and DE (German is a draft). Gate, browser tests 22/22 and 7/7, Lighthouse 100.

@@ -11,7 +11,7 @@ interface Copy {
   how: { title: string; description: string; lead: string; steps: { name: string; text: string }[] };
   diagramTitle: string; layers: Layer[];
   about: {
-    title: string; description: string; eyebrow: string; alt: string; caption: string;
+    title: string; description: string; eyebrow: string; alt: string;
     story: { title: string; paragraphs: string[]; beyond: string };
     skills: { title: string; groups: { level: string; items: string[] }[] };
     cv: { text: string; button: string };
@@ -41,10 +41,9 @@ export const copy: Record<Locale, Copy> = {
     ],
     about: {
       title: 'About',
-      description: 'A short introduction to Azeem Ur Rehman, a software engineer in Nürnberg.',
+      description: 'A short introduction to Azeem Ur Rehman, a software engineer.',
       eyebrow: 'About',
       alt: 'Portrait of Azeem Ur Rehman',
-      caption: 'Nürnberg, Germany',
       story: {
         title: 'From data to robots to products people use',
         paragraphs: [
@@ -60,7 +59,7 @@ export const copy: Record<Locale, Copy> = {
         { level: 'Working knowledge', items: ['PyTorch', 'scikit-learn', 'MLflow', 'Optuna', 'OpenCV', 'JavaScript', 'C++', 'C#', 'SQL', 'SAS', 'MongoDB', 'AWS Bedrock', 'Azure OpenAI', 'OpenAI API', 'N8N', 'PyInstaller', 'BLE', 'ESP8266 / Arduino', 'Raspberry Pi'] },
         { level: 'Creative and design', items: ['UI/UX design', 'Prototyping', 'HTML', 'CSS', 'Figma', 'Canva', 'Technical writing', 'Documentation'] },
       ] },
-      cv: { text: 'Want to know more?', button: 'Request my CV' },
+      cv: { text: 'Want to know more?', button: 'Get my CV' },
     },
     contact: {
       title: 'Contact',
@@ -96,10 +95,9 @@ export const copy: Record<Locale, Copy> = {
     ],
     about: {
       title: 'Über mich',
-      description: 'Eine kurze Vorstellung von Azeem Ur Rehman, Softwareingenieur in Nürnberg.',
+      description: 'Eine kurze Vorstellung von Azeem Ur Rehman, Softwareingenieur.',
       eyebrow: 'Über mich',
       alt: 'Porträt von Azeem Ur Rehman',
-      caption: 'Nürnberg, Deutschland',
       story: {
         title: 'Von Daten über Roboter zu Produkten, die Menschen nutzen',
         paragraphs: [
@@ -115,7 +113,7 @@ export const copy: Record<Locale, Copy> = {
         { level: 'Praxiswissen', items: ['PyTorch', 'scikit-learn', 'MLflow', 'Optuna', 'OpenCV', 'JavaScript', 'C++', 'C#', 'SQL', 'SAS', 'MongoDB', 'AWS Bedrock', 'Azure OpenAI', 'OpenAI API', 'N8N', 'PyInstaller', 'BLE', 'ESP8266 / Arduino', 'Raspberry Pi'] },
         { level: 'Kreativ und Design', items: ['UI/UX-Design', 'Prototyping', 'HTML', 'CSS', 'Figma', 'Canva', 'Technisches Schreiben', 'Dokumentation'] },
       ] },
-      cv: { text: 'Möchten Sie mehr erfahren?', button: 'Lebenslauf anfragen' },
+      cv: { text: 'Möchten Sie mehr erfahren?', button: 'Lebenslauf holen' },
     },
     contact: {
       title: 'Kontakt',
