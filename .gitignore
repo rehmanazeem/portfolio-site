@@ -7,3 +7,6 @@ dist/
 BUILD_PLAN.md
 scripts/blocklist.local.txt
 docs/
+AGENTS.md
+CHANGELOG.md
+CLAUDE.md

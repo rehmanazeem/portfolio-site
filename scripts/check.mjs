@@ -75,7 +75,7 @@ for (const f of html) {
 const blockFile = 'scripts/blocklist.local.txt';
 if (existsSync(blockFile)) {
   const terms = readFileSync(blockFile, 'utf8').split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('#'));
-  const scan = [...textFiles('src'), ...html, 'CHANGELOG.md', 'README.md', 'CLAUDE.md'];
+  const scan = [...textFiles('src'), ...html, 'CHANGELOG.md', 'README.md', 'CLAUDE.md'].filter((f) => existsSync(f)); // the notes files are local-only
   for (const f of scan) {
     const text = readFileSync(f, 'utf8').toLowerCase();
     for (const term of terms) if (text.includes(term.toLowerCase())) problems.push(`blocked term "${term}" found in ${f}`);
