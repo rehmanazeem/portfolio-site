@@ -165,8 +165,10 @@ html { scroll-behavior: smooth; }
 .tile { counter-increment: tile; position: relative; overflow: hidden; padding: 1.5rem 1.4rem 1.4rem; background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: var(--radius); }
 .tile::before { content: "0" counter(tile); position: absolute; top: .4rem; right: 1rem; font-size: 3rem; font-weight: 800; line-height: 1; color: var(--line-strong); opacity: .6; }
 .tile strong { display: block; font-size: 1.2rem; margin-bottom: .5rem; }
-.tiles + .actions { margin-top: 1.75rem; }
+.pipeline + .actions { margin-top: 1.75rem; }
 .tile p { margin: 0; color: var(--muted); max-width: 32ch; }
+.how-head { padding: .5rem 0 0; }
+.how-head h1 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); max-width: 26ch; line-height: 1.2; margin: 0; }
 @media (min-width: 40rem) { .tiles { grid-template-columns: repeat(2, 1fr); } }
 
 /* header logo: full logo on desktop, mark only on phones; light/dark variants follow the theme toggle */
@@ -188,4 +190,22 @@ html { scroll-behavior: smooth; }
 @media (max-width: 40rem) and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .logo-mark.logo-light { display: none !important; }
   :root:not([data-theme="light"]) .logo-mark.logo-dark { display: block !important; height: 24px; }
+}
+
+/* how I work: pipeline of tiles, joined by arrows, shades deepen from first to last */
+.pipeline { list-style: none; margin: 2rem 0 0; padding: 1.5rem 1.25rem; background: var(--surface-2); border-radius: calc(var(--radius) * 1.5); display: grid; gap: 2rem; }
+.stage { position: relative; padding: 1.25rem 1.25rem 1.3rem; background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: var(--radius); }
+.stage:nth-child(1) { border-top-color: color-mix(in srgb, var(--accent) 30%, var(--surface)); }
+.stage:nth-child(2) { border-top-color: color-mix(in srgb, var(--accent) 55%, var(--surface)); }
+.stage:nth-child(3) { border-top-color: color-mix(in srgb, var(--accent) 80%, var(--surface)); }
+.stage strong { display: block; font-size: 1.2rem; margin-bottom: .5rem; font-family: var(--font); }
+.stage p { margin: 0; color: var(--muted); }
+/* arrows: round badge in the gap with a chevron, pointing down on phones and right on laptops */
+.stage:not(:last-child)::before, .stage:not(:last-child)::after { content: ""; position: absolute; left: 50%; top: calc(100% + 1rem); transform: translate(-50%, -50%); }
+.stage:not(:last-child)::after { width: 2rem; height: 2rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px var(--surface-2); }
+.stage:not(:last-child)::before { z-index: 1; width: .55rem; height: .55rem; border-right: 2.5px solid var(--accent-ink); border-bottom: 2.5px solid var(--accent-ink); transform: translate(-50%, -62%) rotate(45deg); }
+@media (min-width: 48rem) {
+  .pipeline { grid-template-columns: repeat(4, 1fr); gap: 2.75rem; padding: 1.75rem 1.5rem; }
+  .stage:not(:last-child)::before, .stage:not(:last-child)::after { left: calc(100% + 1.375rem); top: 50%; }
+  .stage:not(:last-child)::before { transform: translate(-62%, -50%) rotate(-45deg); }
 }

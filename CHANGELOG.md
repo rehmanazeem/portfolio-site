@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- How I work: label and heading in the About/Contact style, the heading is now a promise ("Four clear steps, from the first idea to a product that works."), the four steps are tiles with their names inside, joined as a pipeline by round arrow badges and deepening shades (vertical on phones), and the button reads "Contact" (DE: "Kontakt"). German is a draft.
 - About: CV button reads "Get my CV" (DE draft: "Lebenslauf holen"); the photo caption shows only the name and the About description no longer names the city.
 - About CV band shortened to "Want to know more?" with the Request my CV button (DE draft: "Möchten Sie mehr erfahren?").
 - About page update: story reworked (remote sensing and ML modelling, then the Master's, then today's work and a longer closing), text justified on laptop screens, photo caption aligned with the "Beyond work" line, CV band wording, and a larger skills pane with a "Creative and design" group. EN and DE (German is a draft).

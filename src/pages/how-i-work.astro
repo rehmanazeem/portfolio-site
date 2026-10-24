@@ -7,10 +7,14 @@ const h = copy['en'].how;
 const t = useTranslations('en');
 ---
 <Base locale="en" route="how" switchable title={`${h.title} | ${brand}`} description={h.description}>
-  <h1>{h.title}</h1>
-  <p class="lead">{h.lead}</p>
-  <ol class="tiles">
-    {h.steps.map((s) => <li class="tile"><strong>{s.name}</strong><p>{s.text}</p></li>)}
+  <header class="how-head">
+    <p class="kicker eyebrow">{h.title}</p>
+    <h1>{h.lead}</h1>
+  </header>
+  <ol class="pipeline">
+    {h.steps.map((s) => (
+      <li class="stage"><strong>{s.name}</strong><p>{s.text}</p></li>
+    ))}
   </ol>
-  <p class="actions"><a class="btn btn-primary" href={urlFor('contact', 'en')}>{t('cta.talk')}</a></p>
+  <p class="actions"><a class="btn btn-primary" href={urlFor('contact', 'en')}>{t('cta.contact')}</a></p>
 </Base>

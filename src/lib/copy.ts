@@ -26,7 +26,7 @@ export const copy: Record<Locale, Copy> = {
     description: 'I design complete systems and build products for growing businesses.',
     hook: 'Have an idea that should be a working product?',
     h1: 'I design complete systems and build products for growing businesses.',
-    how: { title: 'How I work', description: 'A structured way of working in four steps: understand, structure, build, finish.', lead: 'A structured way of working, in four steps.', steps: [
+    how: { title: 'How I work', description: 'A structured way of working in four steps: understand, structure, build, finish.', lead: 'Four clear steps, from the first idea to a product that works.', steps: [
       { name: 'Understand', text: 'Users, requirements and constraints are established before any code is written.' },
       { name: 'Structure', text: 'The system is divided into parts that can change independently, and the plan is agreed upfront.' },
       { name: 'Build', text: 'End-to-end implementation, with tests written alongside the code.' },
@@ -80,7 +80,7 @@ export const copy: Record<Locale, Copy> = {
     description: 'Ich entwerfe vollständige Systeme und baue Produkte für wachsende Unternehmen.',
     hook: 'Haben Sie eine Idee, die ein funktionierendes Produkt werden sollte?',
     h1: 'Ich entwerfe vollständige Systeme und baue Produkte für wachsende Unternehmen.',
-    how: { title: 'Wie ich arbeite', description: 'Eine strukturierte Arbeitsweise in vier Schritten: verstehen, strukturieren, bauen, abschließen.', lead: 'Eine strukturierte Arbeitsweise in vier Schritten.', steps: [
+    how: { title: 'Wie ich arbeite', description: 'Eine strukturierte Arbeitsweise in vier Schritten: verstehen, strukturieren, bauen, abschließen.', lead: 'Vier klare Schritte, von der ersten Idee zu einem Produkt, das funktioniert.', steps: [
       { name: 'Verstehen', text: 'Nutzer, Anforderungen und Randbedingungen werden geklärt, bevor Code entsteht.' },
       { name: 'Strukturieren', text: 'Das System wird in Teile gegliedert, die sich unabhängig ändern lassen, und der Plan wird vorab vereinbart.' },
       { name: 'Bauen', text: 'Durchgängige Umsetzung, mit Tests parallel zum Code.' },
